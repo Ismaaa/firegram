@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useStorage } from '../../services/firebase/hooks';
+import { motion } from 'framer-motion';
+import useStorage from '../../services/firebase/hooks/storage';
 
 const ProgressBar = ({ file, setFile }) => {
   const { progress, url } = useStorage(file);
@@ -10,7 +11,13 @@ const ProgressBar = ({ file, setFile }) => {
     }
   }, [url, setFile]);
 
-  return <div className="progress-bar" />;
+  return (
+    <motion.div
+      className="progress-bar"
+      initial={{ width: 0 }}
+      animate={{ width: `${progress}%` }}
+    />
+  );
 };
 
 export default ProgressBar;
