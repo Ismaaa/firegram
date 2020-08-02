@@ -5,8 +5,6 @@ import useFirestore from '../../services/firebase/hooks/firestore';
 const ImageGrid = ({ setSelectedImg }) => {
   const { docs } = useFirestore('images');
 
-  console.log(docs);
-
   return (
     <div className="img-grid">
       {docs &&
