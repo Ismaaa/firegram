@@ -15,10 +15,10 @@ const ImageGrid = ({ setSelectedImg }) => {
             layout
             whileHover={{ opacity: 1 }}
             s
-            onClick={() => setSelectedImg(doc.downloadUrl)}
+            onClick={() => setSelectedImg(doc.url)}
           >
             <motion.img
-              src={doc.downloadUrl}
+              src={doc.url}
               alt="uploaded pic"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

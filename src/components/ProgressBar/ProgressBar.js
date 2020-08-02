@@ -3,13 +3,15 @@ import { motion } from 'framer-motion';
 import useStorage from '../../services/firebase/hooks/storage';
 
 const ProgressBar = ({ file, setFile }) => {
-  const { progress, url } = useStorage(file);
+  const { progress, url, error } = useStorage(file);
 
   useEffect(() => {
     if (url) {
       setFile(null);
     }
   }, [url, setFile]);
+
+  if (error) return <div>{error}</div>;
 
   return (
     <motion.div
