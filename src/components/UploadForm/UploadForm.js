@@ -15,7 +15,7 @@ const UploadForm = () => {
       setError('');
     } else {
       setFile(null);
-      setError('Please select an image file (png or jpg)');
+      setError('Please select a valid file (png or jpg)');
     }
   };
 
@@ -31,11 +31,12 @@ const UploadForm = () => {
         />
       </label>
 
-      {/* <div className="output"> */}
-      {/*  {error && <div className="error">{error}</div>} */}
-      {/*  {file && <div>{file.name}</div>} */}
+      <div className="UploadForm__feedback">
+        <span className="UploadForm__error">{error}</span>
+        <span className="UploadForm__fileName">{file && file.name}</span>
+      </div>
+
       {/*  {file && <ProgressBar file={file} setFile={setFile} />} */}
-      {/* </div> */}
     </form>
   );
 };
