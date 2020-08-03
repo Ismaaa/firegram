@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import Title from './components/Title';
 import UploadForm from './components/UploadForm';
 import ImageGrid from './components/ImageGrid';
 import Modal from './components/Modal';
+import MainHeading from './components/MainHeading';
 
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
 
   return (
-    <div className="App">
-      <Title />
+    <div id="main">
+      <MainHeading />
       <UploadForm />
       <ImageGrid setSelectedImg={setSelectedImg} />
       {selectedImg && (
