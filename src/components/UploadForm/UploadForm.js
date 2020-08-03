@@ -36,7 +36,7 @@ const UploadForm = () => {
         <span className="UploadForm__fileName">{file && file.name}</span>
       </div>
 
-      {/*  {file && <ProgressBar file={file} setFile={setFile} />} */}
+      {file && <ProgressBar file={file} setFile={setFile} />}
     </form>
   );
 };
