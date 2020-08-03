@@ -20,16 +20,22 @@ const UploadForm = () => {
   };
 
   return (
-    <form>
-      <label htmlFor="upload-input">
-        <input id="upload-input" type="file" onChange={handleChange} />
-        <span>+</span>
+    <form className="UploadForm">
+      <label className="UploadForm__label" htmlFor="UploadForm__input">
+        +
+        <input
+          id="UploadForm__input"
+          className="UploadForm__input"
+          type="file"
+          onChange={handleChange}
+        />
       </label>
-      <div className="output">
-        {error && <div className="error">{error}</div>}
-        {file && <div>{file.name}</div>}
-        {file && <ProgressBar file={file} setFile={setFile} />}
-      </div>
+
+      {/* <div className="output"> */}
+      {/*  {error && <div className="error">{error}</div>} */}
+      {/*  {file && <div>{file.name}</div>} */}
+      {/*  {file && <ProgressBar file={file} setFile={setFile} />} */}
+      {/* </div> */}
     </form>
   );
 };
